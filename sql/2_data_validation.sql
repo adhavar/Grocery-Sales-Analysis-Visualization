@@ -95,6 +95,30 @@ SELECT
 FROM products
 WHERE "ProductID" IS NULL;
 
+-- Quantity
+SELECT
+    COUNT(*) AS null_value
+FROM sales
+WHERE "Quantity" IS NULL;
+
+-- Price
+SELECT
+    COUNT(*) AS null_value
+FROM products
+WHERE "Price" IS NULL;
+
+-- Discount
+SELECT
+    COUNT(*) AS null_value
+FROM sales
+WHERE "Discount" IS NULL;
+
+-- SalesDate
+SELECT
+    COUNT(*) AS null_value
+FROM sales
+WHERE "SalesDate" IS NULL;
+
 
 ------------------------------- Section 3 --------------------------------
 --                            Blank values.
@@ -117,7 +141,6 @@ SELECT
     COUNT(*) AS blank_value
 FROM customers
 WHERE TRIM("FirstName") = ''
-    OR TRIM("MiddleInitial") = ''
     OR TRIM("LastName") = '';
 
 -- CityName
@@ -137,6 +160,14 @@ SELECT
     COUNT(*) AS blank_value
 FROM products
 WHERE TRIM("ProductName") = '';
+
+-- SalesDate
+SELECT
+    COUNT(*) AS blank_value
+FROM sales
+WHERE TRIM("SalesDate") = '';
+/* Returned 67526 blank values. When working with the column, I 
+will use the TRIM function to filter out the blank values. */
 
 
 ------------------------------- Section 4 --------------------------------
@@ -205,6 +236,10 @@ FROM products AS pd
 WHERE
     cat."CategoryID" IS NULL;
 
-/* After running all queries, I found that there are no duplicates, null values, 
-nor blank values. In addition, the relational integrity is maintained.
+
+/* After running all queries, I found that there are no duplicates or null values.
+Based on these queries, there are only blank values in the SalesDate column; the blank values will be 
+filtered out using the TRIM function.
+In addition, the relational integrity between all tables is correctly maintained.
+
 The next step is to join the necessary columns into one table. */
