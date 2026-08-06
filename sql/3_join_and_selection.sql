@@ -3,18 +3,17 @@
 CREATE TABLE table_analysis AS
 SELECT
     pd."ProductName", 
-    pd."Class", 
-    pd."Resistant", 
-    pd."IsAllergic", 
-    pd."VitalityDays",
+    cat."CategoryName",
     /* In the original sales table, the TotalPrice column only has the value of 0.
-    Because of the incorrect value, I created a new column. */
+    Because of the incorrect values, I created a new column. */
     CAST(
         (sl."Quantity" * pd."Price") - sl."Discount" 
         AS DECIMAL(10,2)) AS TotalPrice, 
-    cs."CustomerID",
-    /* To easier identify and present the top employees, a full name column needs to be created. 
-    It can also be donde using || */
+    /* The SalesDate column contains both date and time values.
+    To only return the date, I use the DATE function. */
+    DATE(sl."SalesDate") AS SalesDate,
+    /* To easily identify and present the top employees, a full name column needs to be created. 
+    It can also be done using || */
     CONCAT(emp."FirstName", 
         ' ', 
         SUBSTR(emp."MiddleInitial", 1, 1),
@@ -30,3 +29,6 @@ FROM sales AS sl
     LEFT JOIN countries AS cr ON ct."CountryID" = cr."CountryID" 
     LEFT JOIN products AS pd ON sl."ProductID" = pd."ProductID" 
     LEFT JOIN categories AS cat ON pd."CategoryID" = cat."CategoryID"
+
+WHERE
+    TRIM(sl."SalesDate") <> '';
