@@ -43,7 +43,6 @@ GROUP BY CategoryName
 ORDER BY TotalSales DESC
 LIMIT 5;
 
-
 -- 03. Employee Performance
 SELECT
     EmployeeName,
@@ -52,7 +51,6 @@ FROM table_analysis
 GROUP BY EmployeeName
 ORDER BY TotalSales DESC
 LIMIT 5;
-
 
 -- 04. Geographical Analysis
 -- Cities with the highest sales
