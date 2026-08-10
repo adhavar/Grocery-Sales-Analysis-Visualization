@@ -16,7 +16,7 @@ This analysis evaluates the transactional performance of a fictional Grocery Sto
 - **Geographic Analysis:** Explore sales distribution across cities to identify regional performance differences.
 
 ## Dataset Information
-The dataset is publicly available on Kaggle under the CC0: Public Domain License
+The dataset is publicly available on Kaggle under the CC0: Public Domain License.
 
 Dataset source: https://www.kaggle.com/datasets/andrexibiza/grocery-sales-dataset?select=customers.csv
 
@@ -33,7 +33,7 @@ Dataset source: https://www.kaggle.com/datasets/andrexibiza/grocery-sales-datase
 | sales.csv | Transaction records, including Employee ID, Customer ID and Total Price.|
 
 ### 02. Dataset Schema:
-<img width="1123" height="588" src="https://github.com/user-attachments/assets/13b4d475-1fdd-4814-a794-db5b81924784" />
+<img width="1200" height="629" src="https://github.com/user-attachments/assets/13b4d475-1fdd-4814-a794-db5b81924784" />
 
 ## Tools and Environment
 - **SQLite:** Used for data loading, data validation, cleaning, transformation, and analytical table creation.
@@ -41,6 +41,11 @@ Dataset source: https://www.kaggle.com/datasets/andrexibiza/grocery-sales-datase
 - **Tableau:** Used to design and build key charts and the overall dashboard.
 
 ## Data Analysis Process
+The SQL queries used to analyze the data can be found in the `sql` folder in this repository. The folder contains the four main steps of the analysis process.
+- `1_create_tables.sql`: Once the CSV files were imported using the VS Code Terminal, the tables for categories, cities, countries, customers, employees, products, and sales were created. In addition, the relationships between the primary and foreign keys were established.
+- `2_data_validation.sql`: Before working with the data, it was important to validate its quality and consistency. The data validation process included checking for duplicate values in identification columns (CategoryID, EmployeeID, CustomerID, CityID, CountryID, and ProductID), checking for NULL values in relevant columns (including Quantity, Price, Discount, SalesDate, and identification columns), checking for blank values in string and date fields (using the `TRIM` function), and verifying the relationships between tables to ensure referential integrity. No duplicate or NULL values were found, while blank values were only identified in the SalesDate column.
+- `3_join_and_selection.sql`: To create the `table_analysis` table, all the tables were joined using `LEFT JOIN`. The required columns were selected based on the business objectives. During this step, the `TotalPrice` column was recalculated, the `SalesDate` column was converted to a date format, and the `EmployeeName` column was created by combining the employee's first name, middle initial, and last name. The blank values were excluded from the final analytical table.
+- `4_data_analysis.sql`: The `table_analysis` table was used to address the business objectives through SQL aggregation and ranking queries. The analysis identified the days with the highest and lowest sales, the top 5 products, categories and employees by total sales, and the cities with the highest and lowest total sales. These results were used to both validate the visualizations in Tableau and compare top performances.
 
 ## Data Visualization Dashboard
 
