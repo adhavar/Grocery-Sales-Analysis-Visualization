@@ -48,5 +48,8 @@ The SQL queries used to analyze the data can be found in the `sql` folder in thi
 - `4_data_analysis.sql`: The `table_analysis` table was used to address the business objectives through SQL aggregation and ranking queries. The analysis identified the days with the highest and lowest sales, the top 5 products, categories and employees by total sales, and the cities with the highest and lowest total sales. These results were used to both validate the visualizations in Tableau and compare top performances.
 
 ## Data Visualization Dashboard
+The dashboard was developed using Tableau Public. It is interactive, allowing users to select elements within the graphs to filter the data across the entire dashboard. The most useful graphs to filter from are the line chart and the Top 5 Categories by Sales bar chart. You can find it on [Tableau Public](https://public.tableau.com/app/profile/av.a6738/viz/GroceryStoreDashboard_17864011990560/Dashboard).
+
+<img width="2838" height="1192" src="https://github.com/user-attachments/assets/c8776ac0-ec8a-4770-92b6-f541ca3a715c" />
 
 ## Business Insights
