@@ -53,3 +53,14 @@ The dashboard was developed using Tableau Public. It is interactive, allowing us
 <img width="2838" height="1192" src="https://github.com/user-attachments/assets/c8776ac0-ec8a-4770-92b6-f541ca3a715c" />
 
 ## Business Insights
+- ### Sales Performance
+  All sales from January to April show a positive and stable trend. Sales reported in May were lower, but this is explained by the limited data provided, as in May, the data only records sales from May 1st to May 9th.
+
+- ### Product Analysis
+  The top-performing products are “Shrimp -31/40”, “Zucchini - Yellow”, “Vanilla Beans”, “Beef - Inside Round”, and “Lettuce - Treviso”, while the categories that have contributed the most are “Confections”, “Meat”, “Poultry”, “Cereal”, and “Snail”. Based on the data, the grocery store’s marketing department should promote the top performing products in lower sales stores.
+
+- ### Employee Performance
+  The top-performing employees are Devon D. Brewer, Katina Y. Marks, Shelby P. Riddle, Desiree L. Stuart and Darnell O. Nielsen. Their total sales are really close, since they range from $193.0 million to $193.9 million. To incentivize employees, I recommend giving the top performers a bonus or gift, so that employees are motivated to improve and maintain their performance.
+
+- ### Geographic Analysis
+  The cities with the highest sales are Tucson, Jackson, Sacramento, Fort Wayne and Indianapolis, showing that a significant amount of sales is being generated in different regions of the United States. I would recommend improving and increasing advertising in cities with lower sales: Omaha, Long Beach, Atlanta, Fort Worth, New Orleans.
